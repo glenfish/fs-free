@@ -1,63 +1,95 @@
 ---
-import { Icon } from 'astro-icon';
-import { Picture } from '@astrojs/image/components'
+// import { Icon } from 'astro-icon';
+import Logo from '~/components/atoms/Logo.astro';
+import ToggleTheme from '~/components/core/ToggleTheme.astro';
+import ToggleMenu from '~/components/core/ToggleMenu.astro';
+
+import { getHomePermalink, getBlogPermalink, getPermalink, getRelativeLink } from '~/utils/permalinks';
 ---
 
-<section>
-	<div class="max-w-6xl mx-auto px-4 sm:px-6">
-		<div class="py-12 md:py-20">
-			<div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
-				<h1 class="text-5xl md:text-[3.50rem] font-bold leading-tighter tracking-tighter mb-4 font-heading">
-					Your website with
-					<span>Astro</span> +
-					<span
-						class="sm:whitespace-nowrap"
-						>Tailwind CSS</span
-					>
-				</h1>
-				<div class="max-w-3xl mx-auto">
-					<p class="text-xl text-gray-600 mb-8 dark:text-slate-400">
-						<span class="font-semibold underline decoration-wavy decoration-1 decoration-primary-600 underline-offset-2">AstroWind</span> is a production ready template to start your new website using <em>Astro</em> + <em>Tailwind CSS</em>. It has been
-						designed following Best Practices, SEO, Accessibility, <span class="inline sm:hidden">...</span><span
-							class="hidden sm:inline"
-							>Dark Mode, Great Page Speed, image optimization, sitemap generation and more.</span
-						>
-					</p>
-					<div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
-						<div class="flex w-full sm:w-auto">
-							<a
-								class="btn btn-primary sm:mb-0 w-full"
-								href="https://github.com/onwidget/astrowind"
-								target="_blank"
-								rel="noopener"
-							>
-								<Icon name="tabler:download" class="w-5 h-5 mr-1 -ml-1.5" /> Get template
-							</a>
-						</div>
-						<div class="flex w-full sm:w-auto">
-							<a
-								class="btn w-full"
-								href="#features">Learn more</a
-							>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div>
-				<div class="relative m-auto max-w-4xl">
-					<Picture
-						src={import('~/assets/images/hero.jpg')}
-						class="mx-auto rounded-md w-full"
-						widths={[400, 768, 1480]}
-						sizes="(max-width: 767px) 400px, (max-width: 1479px) 768px, 1480px"
-						alt="Hero Image"
-						aspectRatio={1480/833}
-						loading="eager"
-						width={1480}
-						height={833}
-					/>
-				</div>
+<header
+	class="sticky top-0 z-40 flex-none mx-auto w-full bg-white md:bg-white/90 dark:bg-slate-900 dark:md:bg-slate-900/90 md:backdrop-blur-sm"
+	id="header"
+>
+	<div class="py-3 px-3 mx-auto w-full md:flex md:justify-between max-w-6xl md:px-4">
+		<div class="flex justify-between">
+			<a class="flex items-center" href={getHomePermalink()}>
+				<Logo />
+			</a>
+			<div class="flex items-center md:hidden">
+				<ToggleTheme />
+				<ToggleMenu />
 			</div>
 		</div>
+		<nav
+			class="items-center w-full md:w-auto hidden md:flex text-gray-600 dark:text-slate-200 h-[calc(100vh-100px)] md:h-auto overflow-y-auto md:overflow-visible"
+			aria-label="Main navigation"
+		>
+			<ul class="flex flex-col pt-8 md:pt-0 md:flex-row md:self-center w-full md:w-auto text-xl md:text-base">
+				<li class="dropdown">
+					<button
+						class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+						>Pages</button
+					>
+					<ul
+						class="dropdown-menu rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white md:min-w-[200px] dark:md:bg-slate-800 drop-shadow-xl"
+					>
+						<li class="">
+							<a
+								class="rounded-t md:hover:bg-gray-100 dark:hover:bg-gray-700 py-2 px-4 block whitespace-no-wrap"
+								href="#Features">Features</a>
+						</li>
+						<li class="">
+							<a class="md:hover:bg-gray-100 dark:hover:bg-gray-700 py-2 px-4 block whitespace-no-wrap" href="#steps-2"
+								>Process</a>
+						</li>
+						<li class="">
+							<a
+								class="rounded-b md:hover:bg-gray-100 dark:hover:bg-gray-700 py-2 px-4 block whitespace-no-wrap"
+								href="#faqs">FAQ's</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a
+						class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+						href={getPermalink('useful-resources-to-create-websites', 'post')}
+						>Resources
+					</a>
+				</li>
+				<li>
+					<a
+						class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+						href={getBlogPermalink()}>Blog</a
+					>
+				</li>
+				<li class="md:hidden">
+					<a
+						class="font-bold hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+						href="https://github.com/onwidget/astrowind"
+						>Github
+					</a>
+				</li>
+			</ul>
+			<div class="md:self-center flex items-center mb-4 md:mb-0 ml-2">
+				<div class="hidden items-center md:flex">
+					<ToggleTheme iconClass="w-5 h-5" />
+					<!-- <a
+						class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+						aria-label="RSS Feed"
+						href={getRelativeLink('/rss.xml')}
+					>
+						<Icon name="tabler:rss" class="w-5 h-5" />
+					</a> -->
+					<!-- <a
+						href="https://github.com/onwidget/astrowind"
+						class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+						aria-label="Astrowind Github"
+					>
+						<Icon name="tabler:brand-github" class="w-5 h-5" />
+					</a> -->
+				</div>
+			</div>
+		</nav>
 	</div>
-</section>
+</header>
