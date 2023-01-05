@@ -82,6 +82,7 @@
 	height: 35px; */
 	-webkit-transform: scale(2,2);
 	padding-right:30px;
+	padding-left:30px;
 }
 
 #iSelectMovers-Form form input[type="radio"]:focus {
