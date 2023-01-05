@@ -80,6 +80,7 @@
 #iSelectMovers-Form form input[type="radio"] {
 	width: 35px;
 	height: 35px;
+	-webkit-transform: scale(2,2);
 }
 
 #iSelectMovers-Form form input[type="radio"]:focus {
