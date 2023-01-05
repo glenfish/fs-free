@@ -1,7 +1,7 @@
 export const SITE = {
 	name: 'iSelect Movers',
 
-	origin: '/',
+	origin: 'https://iselectmovers.com.au/',
 	basePathname: '/',
 	trailingSlash: false,
 
