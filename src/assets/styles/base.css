@@ -36,3 +36,102 @@
 	@apply rotate-45 translate-y-[-8px] translate-x-[14px];
 }
 
+/* additional styles */
+
+
+
+#iSelectMovers-Form {
+	position: relative;
+	top:-135px;
+	height: 560px;
+}
+
+#iSelectMovers-Form .form-bgnd {
+	/* background-color: rgba(255,255,255,0.7); */
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 15%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 15%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 15%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
+@media only screen and (min-width: 1536px) {
+	#iSelectMovers-Form {
+		position: relative;
+		top:-135px;
+		height: 700px;
+	}
+	#iSelectMovers-Form .form-bgnd {
+		/* background-color: rgba(255,255,255,0.7); */
+		background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 10%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 10%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+	}
+  }
+#iSelectMovers-Form form {
+	max-width:550px;
+	
+	margin: auto;
+}
+
+#iSelectMovers-Form  .fieldwidth {
+	max-width: 400px!important;
+}
+
+#iSelectMovers-Form form input[type="radio"] {
+	width: 35px;
+	height: 35px;
+}
+
+#iSelectMovers-Form form input[type="radio"]:focus {
+	box-shadow: none;
+	outline:none;
+}
+
+.hide {
+	display:none;
+}
+
+.show {
+	display:block;
+}
+
+.bold {
+	font-weight: 600;
+}
+
+#submit-message {
+	padding-top: 10px;
+	color:rgb(3, 162, 3);
+	padding-bottom: 0px;
+}
+
+#iSelectMovers-Form .formheader {
+	font-size: 2rem;
+	padding-top: 12px;
+}
+
+@media only screen and (max-width: 350px) {
+	#iSelectMovers-Form .formheader {
+		font-size: 1.5rem;
+		padding-top: 30px;
+	}
+	#iSelectMovers-Form .form-bgnd {
+		/* background-color: rgba(255,255,255,0.7); */
+		background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 26%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 26%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 26%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+	}
+
+}
+
+#success-anchor {
+	display: block;
+    position: relative;
+    top: -100px;
+	/* width: 100px;
+	height: 100px;
+	background-color: red; */
+    visibility: hidden;
+}
+
