@@ -53,11 +53,11 @@
 	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 15%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 }
-@media only screen and (min-width: 1536px) {
+@media only screen and (min-width: 1426px) {
 	#iSelectMovers-Form {
 		position: relative;
 		top:-135px;
-		height: 700px;
+		height: 760px;
 	}
 	#iSelectMovers-Form .form-bgnd {
 		/* background-color: rgba(255,255,255,0.7); */
@@ -113,13 +113,13 @@
 @media only screen and (max-width: 350px) {
 	#iSelectMovers-Form .formheader {
 		font-size: 1.5rem;
-		padding-top: 30px;
+		padding-top: 35px;
 	}
 	#iSelectMovers-Form .form-bgnd {
 		/* background-color: rgba(255,255,255,0.7); */
-		background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 26%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 26%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 26%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 22%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 22%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 22%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 	}
 
@@ -144,4 +144,10 @@
 	background-color: red; */
     visibility: hidden;
 }
+
+
+html { font-size: calc(1rem + 0.41666666666666663vw); }
+         @media screen and (max-width:1920px) { html { font-size: calc(1rem + 0.41666666666666674vw); } }
+         @media screen and (max-width:1440px) { html { font-size: calc(0.8126951092611863rem + 0.20811654526534862vw); } }
+         @media screen and (max-width:479px) { html { font-size: calc(0.7494769874476988rem + 0.8368200836820083vw); } }
 
