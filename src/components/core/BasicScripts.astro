@@ -2,7 +2,7 @@
 ---
 
 <script is:inline>
-	Set "light" theme as default
+	// Set "light" theme as default
 	if (!localStorage.theme) {
 	  localStorage.theme = "light";
 	}
@@ -11,7 +11,7 @@
 		localStorage.theme === 'light' ||
 		(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)
 	) {
-		document.documentElement.classList.add('dark');
+		document.documentElement.classList.add('light');
 	} else {
 		document.documentElement.classList.remove('dark');
 	}

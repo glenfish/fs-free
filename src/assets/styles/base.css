@@ -135,3 +135,13 @@
     visibility: hidden;
 }
 
+#faq-offset {
+	display: block;
+    position: relative;
+    top: 0px;
+	/* width: 100px;
+	height: 100px;
+	background-color: red; */
+    visibility: hidden;
+}
+
