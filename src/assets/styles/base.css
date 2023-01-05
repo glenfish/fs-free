@@ -81,6 +81,7 @@
 	/* width: 35px;
 	height: 35px; */
 	-webkit-transform: scale(2,2);
+	padding-right:10px;
 }
 
 #iSelectMovers-Form form input[type="radio"]:focus {
