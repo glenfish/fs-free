@@ -1,0 +1,159 @@
+<script is:inline>
+
+var email,phone,rooms,fromaddress,toaddress,date,leadSource,selectedRooms,nextbutton,backbutton,submitbutton,formOne,formTwo,theForm,successMessage;
+var secondPage = false;
+
+document.getElementById("back-button").addEventListener("click", goBack);
+
+    function goBack() {
+        
+            secondPage = false;
+            nextbutton = document.getElementById('next-button');
+            nextbutton.classList.remove("hide");
+            backbutton = document.getElementById('back-button');
+            backbutton.classList.add("hide");
+            submitbutton = document.getElementById('submit-button');
+            submitbutton.classList.add("hide");
+            formOne = document.getElementById('form-1');
+            formOne.classList.remove("hide");
+            formTwo = document.getElementById('form-2');
+            formTwo.classList.add("hide");
+            fromaddress = document.getElementById('fromaddress');
+            toaddress = document.getElementById('toaddress');
+            date = document.getElementById('date');
+            fromaddress.removeAttribute('required');
+            toaddress.removeAttribute('required');
+            date.removeAttribute('required');
+    }
+    
+    function checkValue() {
+            var radios = document.getElementsByName("rooms");
+            for (const radio of radios) {
+                if (radio.checked) {
+                    return radio.value;
+                }
+            }
+    }
+
+    function jump(h){
+    var url = location.href;
+    location.href = "#"+h;        
+    history.replaceState(null,null,url);
+    }
+
+
+  
+      function postToForm(e) {     
+        e.preventDefault();
+        
+        
+           selectedRooms = checkValue();
+           email = document.getElementById('email').value;
+           phone = document.getElementById('phone').value;
+           rooms = selectedRooms;
+
+           if (!secondPage) {
+
+            nextbutton = document.getElementById('next-button');
+            nextbutton.classList.add("hide");
+            backbutton = document.getElementById('back-button');
+            backbutton.classList.remove("hide");
+            submitbutton = document.getElementById('submit-button');
+            submitbutton.classList.remove("hide");
+            formOne = document.getElementById('form-1');
+            formOne.classList.add("hide");
+            formTwo = document.getElementById('form-2');
+            formTwo.classList.remove("hide");
+            
+            console.log('email:' + email);
+            console.log('phone:' + phone);
+            console.log('rooms:' + rooms);
+            fromaddress = document.getElementById('fromaddress');
+            toaddress = document.getElementById('toaddress');
+            date = document.getElementById('date');
+            fromaddress.setAttribute('required', '');
+            toaddress.setAttribute('required', '');
+            date.setAttribute('required', '');
+            secondPage = true;
+            return false;
+        } else {
+            
+
+            try {
+                // alert('trying');
+                email = document.getElementById('email').value;
+                phone = document.getElementById('phone').value;
+                rooms = selectedRooms;
+                fromaddress = document.getElementById('fromaddress').value;
+                toaddress = document.getElementById('toaddress').value;
+                date = document.getElementById('date').value;
+                leadSource = 'iSelectMovers';
+                console.log('fromaddress:' + fromaddress);
+                console.log('toaddress:' + toaddress);
+                console.log('date:' + date);
+                console.log('leadSource:' + leadSource);
+
+                
+
+                if (fromaddress =='') {
+                    alert('From Address is blank');}
+
+                toaddress = document.getElementById('toaddress').value;
+                if (toaddress =='') {
+                    alert('To Address is blank');}
+
+                date = document.getElementById('date').value;
+                if (date =='') {
+                    alert('Date is blank');}
+            }
+            catch(err) {
+               alert('there was a form error');
+            
+            }
+
+        }
+            if (email != '' && phone != '' && rooms != '' && fromaddress != '' && toaddress !='' && date !='' ) {
+                let xhr = new XMLHttpRequest();
+          const yourUrl = 'https://api.form-data.com/f/yi9fvsylfrhxywjh69kkv';
+        //   const yourUrl = 'https://app.headlessforms.cloud/api/v1/form-submission/oGmvA82Vjv';
+            submitbutton = document.getElementById('submit-button');
+            var spinner = document.getElementById('spinner');
+            submitbutton.disabled = true;
+            submitbutton.classList.add('hide');
+            backbutton = document.getElementById('back-button');
+            backbutton.classList.add("hide");
+            let submitMessage = document.getElementById('submit-message');
+            submitMessage.classList.remove('hide');
+            spinner.classList.remove('hide');
+          xhr.open("POST", yourUrl, true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(JSON.stringify({
+              email: email,
+              phone: phone,
+              rooms: rooms,
+              fromaddress: fromaddress,
+              toaddress: toaddress,
+              date: date,
+              leadSource: 'iSelectMovers'
+          }));
+          xhr.onreadystatechange = function() {
+              if (xhr.readyState == XMLHttpRequest.DONE) {
+                //   window.top.location.href = 'https://iselectmovers2.netlify.app/success/';
+                theForm = document.getElementById('iSelectMovers-Form');
+                theForm.classList.add('hide');
+                successMessage = document.getElementById('success-message');
+                successMessage.classList.remove('hide');
+                jump('success-message');
+              }
+          } 
+            } else {
+                alert('Not all fields have been filled out.')
+                return false;
+            }
+          
+      }
+      
+      
+      
+      
+      </script> 

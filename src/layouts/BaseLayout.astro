@@ -3,7 +3,8 @@ import '~/assets/styles/base.css';
 
 import MetaTags from '~/components/core/MetaTags.astro';
 import BasicScripts from '~/components/core/BasicScripts.astro';
-
+import FormScripts from '~/components/core/FormScripts.astro';
+import HeaderScripts from '~/components/core/HeaderScripts.astro';
 const { meta = {} } = Astro.props;
 ---
 
@@ -11,6 +12,7 @@ const { meta = {} } = Astro.props;
 <html lang="en" class="motion-safe:scroll-smooth 2xl:text-[20px]">
 	<head>
 		<MetaTags {...meta} />
+		<HeaderScripts />
 	</head>
 
 	<body class="antialiased text-gray-900 dark:text-slate-500 tracking-tight bg-white dark:bg-slate-900">
@@ -21,5 +23,6 @@ const { meta = {} } = Astro.props;
 				content-visibility: auto;
 			}
 		</style>
+		<FormScripts />  
 	</body>
 </html>
