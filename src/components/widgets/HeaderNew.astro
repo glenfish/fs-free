@@ -88,7 +88,7 @@ import { getHomePermalink, getBlogPermalink, getPermalink, getRelativeLink } fro
     }
 
     function mobileAnchorScroll(id) {
-      const yOffset = -50;
+      const yOffset = -150;
       var scrollLocation = document.getElementById(id);
       const y = scrollLocation.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({top: y, block: 'start'});
