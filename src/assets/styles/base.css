@@ -150,11 +150,23 @@
 	}
 
 }
-
-#success-anchor, #faq-anchor, #quote-anchor, #features-anchor, #process-anchor  {
+#success-anchor {
+	display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+}
+#faq-anchor, #features-anchor, #process-anchor  {
 	display: block;
     position: relative;
     top: -120px;
+    visibility: hidden;
+}
+
+#quote-anchor {
+	display: block;
+    position: relative;
+    top: -160px;
     visibility: hidden;
 }
 
