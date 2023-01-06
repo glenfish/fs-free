@@ -151,25 +151,13 @@
 
 }
 
-#success-anchor {
+#success-anchor, #faq-anchor, #quote-anchor, #features-anchor, #process-anchor  {
 	display: block;
     position: relative;
-    top: -100px;
-	/* width: 100px;
-	height: 100px;
-	background-color: red; */
+    top: -120px;
     visibility: hidden;
 }
 
-#faq-offset {
-	display: block;
-    position: relative;
-    top: 0px;
-	/* width: 100px;
-	height: 100px;
-	background-color: red; */
-    visibility: hidden;
-}
 
 
 html { font-size: calc(1rem + 0.41666666666666663vw); }
