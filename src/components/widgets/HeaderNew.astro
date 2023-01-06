@@ -87,16 +87,7 @@ import { getHomePermalink, getBlogPermalink, getPermalink, getRelativeLink } fro
         document.getElementById('hamburgerMenu').click();
     }
 
-    function mobileAnchorScroll(id) {
-      const yOffset = -120;
-      var scrollLocation = document.getElementById(id);
-      try {
-      const y = scrollLocation.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({top: y, block: 'start'});
-      } catch {
-        window.location.hostname;
-      }
-  }
+
 
     var menuControl = document.getElementById("menuControl");
     document.getElementById("link1").addEventListener("click", closeMenu);
