@@ -2,7 +2,7 @@
 publishDate: 'Jan 05 2023'
 title: 'How to prepare to move house.'
 description: 'How to prepare to move house the easy way.'
-image: '~/assets/images/hero.jpg'
+image: '~/assets/images/Hero.jpg'
 category: 'Tutorials'
 tags: [Moving House, Things you need to move, How to plan to move house]
 canonical: https://astrowind.vercel.app/astrowind-template-in-depth # When posting content to multiple platforms at the same time (such as this website and Medium) and want to specify the ultimate authority. Remove it to automatically generate canonical
