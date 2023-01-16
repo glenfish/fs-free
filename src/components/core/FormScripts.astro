@@ -84,10 +84,11 @@ document.getElementById("back-button").addEventListener("click", goBack);
                 if (!isvalid) {
                     // console.log('error on field');
                     
-                    thePhone.setCustomValidity("please input a 10 digit Australian mobile number");
+                    thePhone.setCustomValidity("please enter a valid Australian mobile number");
                     thePhone.reportValidity();
                     if (!checkPhoneNumber(thePhone.value)) {
-                    thePhone.setCustomValidity("10 digits required");
+                        thePhone.setCustomValidity("");
+                    thePhone.setCustomValidity("please enter a valid Australian mobile number");
                     thePhone.reportValidity();
                     }
                 } else {
