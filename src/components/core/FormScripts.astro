@@ -3,7 +3,9 @@
 const patterns = {
     email: /^([a-z\d.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
     phone: /^04[0-9]{8}/,
-    partialemail: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]/
+    partialemail: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]/,
+    fromaddress: /(4\d{3})\s(\w{3,99})|(\w{3,99})\s(4\d{3})/,
+    toaddress: /(4\d{3})\s(\w{3,99})|(\w{3,99})\s(4\d{3})/
 };
 var email,phone,rooms,fromaddress,toaddress,date,leadSource,selectedRooms,nextbutton,backbutton,submitbutton,formOne,formTwo,theForm,successMessage;
 var secondPage = false;
@@ -52,6 +54,8 @@ document.getElementById("back-button").addEventListener("click", goBack);
 
             let theEmail = document.getElementById('email');
             let thePhone = document.getElementById('phone');
+            let theFromAddress = document.getElementById('fromaddress');
+            let theToAddress = document.getElementById('toaddress');
             let isvalid;
             let partiallyValidEmail;
 
@@ -93,6 +97,42 @@ document.getElementById("back-button").addEventListener("click", goBack);
                     thePhone.reportValidity();
                     }
                 }
+            });
+
+             theFromAddress.addEventListener("keyup", () => {
+                let theFromAddress = document.getElementById('fromaddress');
+                    theFromAddress.setCustomValidity("");
+                    theFromAddress.reportValidity();
+                    
+                    isvalid = validate(theFromAddress, patterns.fromaddress);
+                    
+                    if (!isvalid) {
+                        
+                        theFromAddress.setCustomValidity("please enter a suburb and postcode");
+                        theFromAddress.reportValidity();
+                    } else {
+                        theFromAddress.setCustomValidity("");
+                        theFromAddress.reportValidity();
+                    }
+                 
+            });
+
+            theToAddress.addEventListener("keyup", () => {
+                theToAddress = document.getElementById('toaddress');
+                    theToAddress.setCustomValidity("");
+                    theToAddress.reportValidity();
+
+                    isvalid = validate(theToAddress, patterns.toaddress);
+                    
+                    if (!isvalid) {
+                        
+                        theToAddress.setCustomValidity("please enter a suburb and postcode");
+                        theFromAddress.reportValidity();
+                    } else {
+                        theToAddress.setCustomValidity("");
+                        theFromAddress.reportValidity();
+                    }
+                  
             });
 
 
