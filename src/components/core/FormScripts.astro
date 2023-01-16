@@ -79,8 +79,11 @@ document.getElementById("back-button").addEventListener("click", goBack);
                 isvalid = validate(thePhone, patterns.phone);
                 if (!isvalid) {
                     // console.log('error on field');
-                    if (checkPhoneNumber(thePhone.value)) {
+                    
                     thePhone.setCustomValidity("please input a 10 digit Australian mobile number");
+                    thePhone.reportValidity();
+                    if (!checkPhoneNumber(thePhone.value)) {
+                    thePhone.setCustomValidity("10 digits required");
                     thePhone.reportValidity();
                     }
                 } else {
@@ -140,12 +143,12 @@ document.getElementById("back-button").addEventListener("click", goBack);
     }
 
     function checkPhoneNumber(phone) {
-        if (phone.length == '10') {
-            // console.log('10 numbers!');
-            return true
-        } else {
-            // console.log('more numbers needed');
+        if (phone.length !== 10) {
+            
             return false
+        } else {
+            
+            return true
         }
     }
 
