@@ -126,8 +126,8 @@ document.getElementById("back-button").addEventListener("click", goBack);
 
     // validation function
     function validate(field, regex) {
-        console.log('field value: ' + field.value);
-        console.log('regex: ' + regex);
+        // console.log('field value: ' + field.value);
+        // console.log('regex: ' + regex);
         if (regex.test(field.value)) {
             field.classList.add('valid');
             field.classList.remove('invalid');
