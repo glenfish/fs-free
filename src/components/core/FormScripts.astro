@@ -1,5 +1,10 @@
 <script is:inline>
-
+// const inputs = document.querySelectorAll("input");
+const patterns = {
+    email: /^([a-z\d.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
+    phone: /^04[0-9]{8}/,
+    partialemail: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]/
+};
 var email,phone,rooms,fromaddress,toaddress,date,leadSource,selectedRooms,nextbutton,backbutton,submitbutton,formOne,formTwo,theForm,successMessage;
 var secondPage = false;
 
@@ -39,6 +44,109 @@ document.getElementById("back-button").addEventListener("click", goBack);
     var url = location.href;
     location.href = "#"+h;        
     history.replaceState(null,null,url);
+    }
+
+    // inputs.forEach(input => {
+    //     input.addEventListener("keyup", e => {
+
+
+            let theEmail = document.getElementById('email');
+            let thePhone = document.getElementById('phone');
+            let isvalid;
+            let partiallyValidEmail;
+
+            theEmail.addEventListener("keyup", () => {
+                partiallyValidEmail = validate(theEmail, patterns.partialemail);
+                if (partiallyValidEmail) {
+                    theEmail.setCustomValidity("");
+                    theEmail.reportValidity();
+                    theEmail = document.getElementById('email');
+                    isvalid = validate(theEmail, patterns.email);
+                    
+                    if (!isvalid) {
+                        
+                        theEmail.setCustomValidity("please enter a valid email address");
+                    } else {
+                        theEmail.setCustomValidity("");
+                    }
+                }   
+            });
+
+            thePhone.addEventListener("keyup", () => {
+                thePhone.setCustomValidity("");
+                thePhone.reportValidity();
+                thePhone = document.getElementById('phone');
+                isvalid = validate(thePhone, patterns.phone);
+                if (!isvalid) {
+                    // console.log('error on field');
+                    if (checkPhoneNumber(thePhone.value)) {
+                    thePhone.setCustomValidity("please input a 10 digit Australian mobile number");
+                    thePhone.reportValidity();
+                    }
+                } else {
+                    // console.log('no errors on field');
+                    if (checkPhoneNumber(thePhone.value)) {
+                    thePhone.setCustomValidity("");
+                    thePhone.reportValidity();
+                    }
+                }
+            });
+
+
+            // if (e.target.attributes.name.value == 'phone') {
+                
+            //     if (e.target.value.length < 10) {
+            //         e.target.classList.remove('valid');
+            //         e.target.classList.add('invalid');
+            //     }
+            // }
+            // if (e.target.attributes.name.value == 'email') {
+                
+            //     if (e.target.value.length < 8) {
+            //         e.target.classList.remove('valid');
+            //         e.target.classList.add('invalid');
+            //     }
+            // }
+            // if (e.target.attributes.name.value == 'fromaddress') {
+                
+            //     if (e.target.value.length <= 1) {
+            //         e.target.classList.remove('valid');
+            //         e.target.classList.add('invalid');
+            //     }
+            // }
+            // if (e.target.attributes.name.value == 'toaddress') {
+              
+            //     if (e.target.value.length <= 1) {
+            //         e.target.classList.remove('valid');
+            //         e.target.classList.add('invalid');
+            //     }
+            // }
+    //     });
+    // });
+
+    // validation function
+    function validate(field, regex) {
+        console.log('field value: ' + field.value);
+        console.log('regex: ' + regex);
+        if (regex.test(field.value)) {
+            field.classList.add('valid');
+            field.classList.remove('invalid');
+            return true;
+        } else {
+            field.classList.add('invalid');
+            field.classList.remove('valid');
+            return false;
+        }
+    }
+
+    function checkPhoneNumber(phone) {
+        if (phone.length == '10') {
+            // console.log('10 numbers!');
+            return true
+        } else {
+            // console.log('more numbers needed');
+            return false
+        }
     }
 
 

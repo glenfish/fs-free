@@ -1802,3 +1802,10 @@ screen and (max-device-width: 415px) and (orientation: landscape) {
 /* DONT TOUCH IT */ 
 .formFooter.summer-sale-2020 { display: none !important; } 
 /* DONT TOUCH IT */
+
+.invalid {
+	background-color: red!important;
+}
+.valid {
+	background-color: green!important;
+}
