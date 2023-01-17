@@ -1,7 +1,7 @@
 <script is:inline>
 // const inputs = document.querySelectorAll("input");
 const patterns = {
-    email: /^([a-z\d.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
+    email: /^([a-zA-Z\d.-]+)@([a-zA-Z\d-]+)\.([a-zA-Z]{2,8})(\.[a-zA-Z]{2,8})?$/,
     phone: /^04[0-9]{8}/,
     partialemail: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]/,
     fromaddress: /(4\d{3})\s(\w{3,99})|(\w{3,99})\s(4\d{3})/,
@@ -10,7 +10,19 @@ const patterns = {
 var email,phone,rooms,fromaddress,toaddress,date,leadSource,selectedRooms,nextbutton,backbutton,submitbutton,formOne,formTwo,theForm,successMessage;
 var secondPage = false;
 
+fromaddress = document.getElementById('fromaddress');
+            toaddress = document.getElementById('toaddress');
+            date = document.getElementById('date');
+            fromaddress.removeAttribute('required');
+            toaddress.removeAttribute('required');
+            date.removeAttribute('required');
+
 document.getElementById("back-button").addEventListener("click", goBack);
+
+const isHidden = elem => {
+  const styles = window.getComputedStyle(elem)
+  return styles.display === 'none' || styles.visibility === 'hidden'
+}
 
     function goBack() {
         
@@ -31,6 +43,12 @@ document.getElementById("back-button").addEventListener("click", goBack);
             fromaddress.removeAttribute('required');
             toaddress.removeAttribute('required');
             date.removeAttribute('required');
+            fromaddress.setCustomValidity("");
+            toaddress.setCustomValidity("");
+            date.setCustomValidity("");
+            fromaddress.reportValidity();
+            toaddress.reportValidity();
+            date.reportValidity();
     }
     
     function checkValue() {
@@ -102,8 +120,8 @@ document.getElementById("back-button").addEventListener("click", goBack);
 
              theFromAddress.addEventListener("keyup", () => {
                 let theFromAddress = document.getElementById('fromaddress');
-                    theFromAddress.setCustomValidity("");
-                    theFromAddress.reportValidity();
+                    // theFromAddress.setCustomValidity("");
+                    // theFromAddress.reportValidity();
                     
                     isvalid = validate(theFromAddress, patterns.fromaddress);
                     
@@ -120,8 +138,8 @@ document.getElementById("back-button").addEventListener("click", goBack);
 
             theToAddress.addEventListener("keyup", () => {
                 theToAddress = document.getElementById('toaddress');
-                    theToAddress.setCustomValidity("");
-                    theToAddress.reportValidity();
+                    // theToAddress.setCustomValidity("");
+                    // theToAddress.reportValidity();
 
                     isvalid = validate(theToAddress, patterns.toaddress);
                     
@@ -195,8 +213,12 @@ document.getElementById("back-button").addEventListener("click", goBack);
 
 
   
-      function postToForm(e) {     
+      function postToForm(e) { 
+
+        
         e.preventDefault();
+
+        // e.preventDefault();
         
         
            selectedRooms = checkValue();
@@ -205,34 +227,41 @@ document.getElementById("back-button").addEventListener("click", goBack);
            rooms = selectedRooms;
 
            if (!secondPage) {
+            // e.preventDefault();
 
+            // we are on the first page of the form
+            formTwo = document.getElementById('form-2');
+            formTwo.classList.remove("hide");
+            
+            
+            formOne = document.getElementById('form-1');
+            formOne.classList.add("hide");
             nextbutton = document.getElementById('next-button');
             nextbutton.classList.add("hide");
             backbutton = document.getElementById('back-button');
             backbutton.classList.remove("hide");
             submitbutton = document.getElementById('submit-button');
             submitbutton.classList.remove("hide");
-            formOne = document.getElementById('form-1');
-            formOne.classList.add("hide");
-            formTwo = document.getElementById('form-2');
-            formTwo.classList.remove("hide");
+
+            
             
             console.log('email:' + email);
             console.log('phone:' + phone);
             console.log('rooms:' + rooms);
+
             fromaddress = document.getElementById('fromaddress');
             toaddress = document.getElementById('toaddress');
             date = document.getElementById('date');
-            fromaddress.setAttribute('required', '');
-            toaddress.setAttribute('required', '');
-            date.setAttribute('required', '');
+            
             secondPage = true;
             return false;
         } else {
-            
-
+            // e.preventDefault();
+            // we are on the second page of the from
             try {
-                // alert('trying');
+                fromaddress.setCustomValidity("please enter a suburb and postcode");
+            toaddress.setCustomValidity("please enter a suburb and postcode");
+            date.setCustomValidity("please enter a date");
                 email = document.getElementById('email').value;
                 phone = document.getElementById('phone').value;
                 rooms = selectedRooms;
@@ -245,7 +274,9 @@ document.getElementById("back-button").addEventListener("click", goBack);
                 console.log('date:' + date);
                 console.log('leadSource:' + leadSource);
 
-                
+                fromaddress.setAttribute('required', '');
+            toaddress.setAttribute('required', '');
+            date.setAttribute('required', '');
 
                 if (fromaddress =='') {
                     alert('From Address is blank');}
@@ -257,10 +288,8 @@ document.getElementById("back-button").addEventListener("click", goBack);
                 date = document.getElementById('date').value;
                 if (date =='') {
                     alert('Date is blank');}
-            }
-            catch(err) {
-               alert('there was a form error');
-            
+            } catch {
+                
             }
 
         }
