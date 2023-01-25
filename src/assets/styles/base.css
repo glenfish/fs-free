@@ -77,6 +77,11 @@
 	max-width: 400px!important;
 }
 
+#iSelectMovers-Form  .half-fieldwidth {
+	max-width: 200px!important;
+	margin-right:5px!important;
+}
+
 #iSelectMovers-Form form input[type="radio"]::before {
 	content: "";
 	width: 1em;

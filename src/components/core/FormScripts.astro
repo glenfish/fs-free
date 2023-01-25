@@ -1,21 +1,24 @@
 <script is:inline>
 // const inputs = document.querySelectorAll("input");
 const patterns = {
+    firstname: /[a-zA-Z']{1,99}/,
+    lastname: /[a-zA-Z']{2,99}/,
     email: /^([a-zA-Z\d.-]+)@([a-zA-Z\d-]+)\.([a-zA-Z]{2,8})(\.[a-zA-Z]{2,8})?$/,
     phone: /^04[0-9]{8}/,
     partialemail: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]/,
     fromaddress: /(4\d{3})\s(\w{3,99})|(\w{3,99})\s(4\d{3})/,
     toaddress: /(4\d{3})\s(\w{3,99})|(\w{3,99})\s(4\d{3})/
 };
-var email,phone,rooms,fromaddress,toaddress,date,leadSource,selectedRooms,nextbutton,backbutton,submitbutton,formOne,formTwo,theForm,successMessage;
+var firstname,lastname,email,phone,rooms,fromaddress,toaddress,date,leadSource,selectedRooms,nextbutton,backbutton,submitbutton,formOne,formTwo,theForm,successMessage;
 var secondPage = false;
-
+firstname = document.getElementById('firstname');
+lastname = document.getElementById('lastname');
 fromaddress = document.getElementById('fromaddress');
-            toaddress = document.getElementById('toaddress');
-            date = document.getElementById('date');
-            fromaddress.removeAttribute('required');
-            toaddress.removeAttribute('required');
-            date.removeAttribute('required');
+toaddress = document.getElementById('toaddress');
+date = document.getElementById('date');
+fromaddress.removeAttribute('required');
+toaddress.removeAttribute('required');
+date.removeAttribute('required');
 
 document.getElementById("back-button").addEventListener("click", goBack);
 
@@ -37,6 +40,8 @@ const isHidden = elem => {
             formOne.classList.remove("hide");
             formTwo = document.getElementById('form-2');
             formTwo.classList.add("hide");
+            firstname = document.getElementById('firstname');
+            lastname = document.getElementById('lastname');
             fromaddress = document.getElementById('fromaddress');
             toaddress = document.getElementById('toaddress');
             date = document.getElementById('date');
@@ -66,10 +71,20 @@ const isHidden = elem => {
     history.replaceState(null,null,url);
     }
 
+    function capitalize(str) {
+        const arr = str.split(" ");
+        for (var i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+    }
+    const str2 = arr.join(" ");
+    return str2;
+    }
+
     // inputs.forEach(input => {
     //     input.addEventListener("keyup", e => {
 
-
+            let theFirstName = document.getElementById('firstname');
+            let theLastName = document.getElementById('lastname');
             let theEmail = document.getElementById('email');
             let thePhone = document.getElementById('phone');
             let theFromAddress = document.getElementById('fromaddress');
@@ -77,6 +92,37 @@ const isHidden = elem => {
             let isvalid;
             let partiallyValidEmail;
 
+
+            theFirstName.addEventListener("keyup", () => {
+
+                    isvalid = validate(theFirstName, patterns.firstname);
+                    
+                    if (!isvalid) {
+                        
+                        theFirstName.setCustomValidity("please enter your first name");
+                        theFirstName.reportValidity();
+                    } else {
+                        theFirstName.setCustomValidity("");
+                        theFirstName.reportValidity();
+                    }
+                 
+            });
+
+            theLastName.addEventListener("keyup", () => {
+                    
+                isvalid = validate(theLastName, patterns.lastname);
+
+                if (!isvalid) {
+                    
+                    theLastName.setCustomValidity("please enter your last name");
+                    theLastName.reportValidity();
+                } else {
+                    theLastName.setCustomValidity("");
+                    theLastName.reportValidity();
+                }
+
+            });
+            
             theEmail.addEventListener("keyup", () => {
                 partiallyValidEmail = validate(theEmail, patterns.partialemail);
                 if (partiallyValidEmail) {
@@ -155,36 +201,7 @@ const isHidden = elem => {
             });
 
 
-            // if (e.target.attributes.name.value == 'phone') {
-                
-            //     if (e.target.value.length < 10) {
-            //         e.target.classList.remove('valid');
-            //         e.target.classList.add('invalid');
-            //     }
-            // }
-            // if (e.target.attributes.name.value == 'email') {
-                
-            //     if (e.target.value.length < 8) {
-            //         e.target.classList.remove('valid');
-            //         e.target.classList.add('invalid');
-            //     }
-            // }
-            // if (e.target.attributes.name.value == 'fromaddress') {
-                
-            //     if (e.target.value.length <= 1) {
-            //         e.target.classList.remove('valid');
-            //         e.target.classList.add('invalid');
-            //     }
-            // }
-            // if (e.target.attributes.name.value == 'toaddress') {
-              
-            //     if (e.target.value.length <= 1) {
-            //         e.target.classList.remove('valid');
-            //         e.target.classList.add('invalid');
-            //     }
-            // }
-    //     });
-    // });
+           
 
     // validation function
     function validate(field, regex) {
@@ -214,16 +231,13 @@ const isHidden = elem => {
 
   
       function postToForm(e) { 
-
-        
         e.preventDefault();
 
-        // e.preventDefault();
-        
-        
-           selectedRooms = checkValue();
+           firstname = document.getElementById('firstname').value;
+           lastname = document.getElementById('lastname').value;
            email = document.getElementById('email').value;
            phone = document.getElementById('phone').value;
+           selectedRooms = checkValue();
            rooms = selectedRooms;
 
            if (!secondPage) {
@@ -243,11 +257,11 @@ const isHidden = elem => {
             submitbutton = document.getElementById('submit-button');
             submitbutton.classList.remove("hide");
 
-            
-            
-            console.log('email:' + email);
-            console.log('phone:' + phone);
-            console.log('rooms:' + rooms);
+            console.log('first: ' + firstname);
+            console.log('last: ' + lastname);
+            console.log('email: ' + email);
+            console.log('phone: ' + phone);
+            console.log('rooms: ' + rooms);
 
             fromaddress = document.getElementById('fromaddress');
             toaddress = document.getElementById('toaddress');
@@ -268,9 +282,14 @@ const isHidden = elem => {
             // e.preventDefault();
             // we are on the second page of the from
             try {
+                firstname = '';
+                lastname = '';
                 fromaddress = '';
                 toaddress = '';
                 date = '';
+                firstname = capitalize(document.getElementById('firstname').value);
+                lastname = capitalize(document.getElementById('lastname').value);
+                email = document.getElementById('email').value;
                 email = document.getElementById('email').value;
                 phone = document.getElementById('phone').value;
                 rooms = selectedRooms;
@@ -302,7 +321,7 @@ const isHidden = elem => {
             }
 
         }
-            if (email != '' && phone != '' && rooms != '' && fromaddress != '' && toaddress !='' && date !='' ) {
+            if (firstname != '' && lastname != '' && email != '' && phone != '' && rooms != '' && fromaddress != '' && toaddress !='' && date !='' ) {
                 let xhr = new XMLHttpRequest();
         //   const yourUrl = 'https://api.form-data.com/f/yi9fvsylfrhxywjh69kkv';
           const yourUrl = 'https://app.headlessforms.cloud/api/v1/form-submission/oGmvA82Vjv';
@@ -318,6 +337,8 @@ const isHidden = elem => {
           xhr.open("POST", yourUrl, true);
           xhr.setRequestHeader('Content-Type', 'application/json');
           xhr.send(JSON.stringify({
+              firstname: firstname,
+              lastname: lastname,
               email: email,
               phone: phone,
               rooms: rooms,

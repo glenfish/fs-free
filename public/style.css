@@ -1809,3 +1809,8 @@ screen and (max-device-width: 415px) and (orientation: landscape) {
 .valid {
 	background-color: green!important;
 }
+
+.half-fieldwidth {
+	max-width:20px!important;
+	padding-right:5px;
+}
