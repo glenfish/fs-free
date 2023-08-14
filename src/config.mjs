@@ -1,12 +1,12 @@
 export const SITE = {
-	name: 'iSelect Movers',
+	name: 'Brisbane and Gold Coast Removalists | iSelect Movers',
 
 	origin: 'https://iselectmovers.com.au/',
 	basePathname: '/',
 	trailingSlash: false,
 
-	title: 'iSelect Movers',
-	description: 'Brisbane and Gold Coast Removalists',
+	title: 'Brisbane and Gold Coast Removalists | iSelect Movers',
+	description: 'Choose iSelect Movers for your Brisbane to Gold Coast moving needs at unbeatable prices! Our expert team provides top-notch furniture removal services as the leading removalists from Gold Coast to Brisbane.',
 
 	googleAnalyticsId: false, // or "G-XXXXXXXXXX",
 	googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
