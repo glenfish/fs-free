@@ -1,206 +1,376 @@
 ---
-
-import { Picture } from '@astrojs/image/components'
+import { Picture } from '@astrojs/image/components';
 ---
 
 <div id="formPage" class="min-w-full text-xl">
-    <div class=" relative m-auto max-w-4xl pb-10">
-        <Picture
-            src={import('~/assets/images/hero-iSelect.png')}
-            class="mx-auto rounded-md w-full"
-            widths={[400, 768, 1480]}
-            sizes="(max-width: 767px) 400px, (max-width: 1479px) 768px, 1480px"
-            alt="Hero Image"
-            aspectRatio={1480/833}
-            loading="eager"
-            width={1480}
-            height={833}
-        />
-        <div id="quote-anchor"></div>
-        <div id="iSelectMovers-Form" style="" class="flex flex-nowrap justify-center text-center min-w-full">
-            <div class=" m-auto min-w-full form-bgnd text-center mt-10 mb-10">
-                <div class="text-center pt-10">
-                    
-                    
+	<div class="relative m-auto max-w-4xl pb-10">
+		<Picture
+			src={import('~/assets/images/hero-iSelect.png')}
+			class="mx-auto rounded-md w-full"
+			widths={[400, 768, 1480]}
+			sizes="(max-width: 767px) 400px, (max-width: 1479px) 768px, 1480px"
+			alt="Hero Image"
+			aspectRatio={1480 / 833}
+			loading="eager"
+			width={1480}
+			height={833}
+		/>
+		<div id="quote-anchor"></div>
+		<div id="iSelectMovers-Form" style="" class="flex flex-nowrap justify-center text-center min-w-full">
+			<div class="mx-auto min-w-full form-bgnd text-center mt-10 mb-10">
+				<div class="text-center pt-10">
+					<h2
+						class="lg:text-4xl md:text-3xl sm:text-3xl text-3xl font-bold leading-tighter tracking-tighter mb-0 font-heading text-center px-1 relative top-10"
+					>
+						Gold Coast & Brisbane Quote
+					</h2>
+					<form
+						class="p-3 text-center"
+						onsubmit="return postToForm(event);"
+						method="post"
+						name="iSelectMovers"
+						id="iSelectMovers"
+						accept-charset="utf-8"
+						autocomplete="on"
+					>
+						<div class="mb-6 text-left">
+							<div id="form-1" class="w-full px-3">
+								<!-- start of flex row -->
+								<div class="flex flex-row mt-10">
+									<!-- <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Firstname:</label> -->
+									<div class="flex half-fieldwidth">
+										<span
+											class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600"
+										>
+											<svg
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="w-5 h-5 text-gray-500 dark:text-gray-400"
+												fill="currentColor"
+												viewBox="0 0 25 25"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													fill-rule="evenodd"
+													clip-rule="evenodd"
+													d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7ZM14 7C14 8.10457 13.1046 9 12 9C10.8954 9 10 8.10457 10 7C10 5.89543 10.8954 5 12 5C13.1046 5 14 5.89543 14 7Z"
+													fill="gray"></path>
+												<path
+													fill-rule="evenodd"
+													clip-rule="evenodd"
+													d="M20 17.1666C20 16.7333 19.8642 16.3074 19.5815 15.979C17.7477 13.8488 15.0313 12.5 12 12.5C8.96866 12.5 6.25235 13.8488 4.41847 15.979C4.13576 16.3074 4 16.7333 4 17.1666V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V17.1666ZM18 17.2083C16.5313 15.5445 14.3887 14.5 12 14.5C9.61132 14.5 7.46872 15.5445 6 17.2083V19H18V17.2083ZM6.00017 17.1622C6.00017 17.1622 6.00018 17.1622 6.00017 17.1623C6.00016 17.1624 6.00015 17.1625 6.00012 17.1627C6.00014 17.1625 6.00016 17.1623 6.00017 17.1622Z"
+													fill="gray"></path>
+											</svg>
+										</span>
+										<input
+											type="text"
+											id="firstname"
+											name="firstname"
+											class="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 placeholder-gray-800 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+											placeholder="First Name"
+											required
+										/>
+									</div><br />
 
-<form class="p-3 text-center" onsubmit="return postToForm(event);" method="post" name="iSelectMovers" id="iSelectMovers" accept-charset="utf-8" autocomplete="on">
-    <div class="mb-6 text-left">
-        <div id="form-1" class="">
-        <!-- <h1 class="formheader pb-5 pt-5 text-left bold">Get A Moving Quote</h1> -->
-        <h3 class="formheader text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-center pt-5">Get A Moving Quote <span class="px-20"></span></h3>
-        <!-- start of flex row -->
-        <div class="flex flex-row mt-10">  
-        <!-- <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Firstname:</label> -->
-        <div class="flex  half-fieldwidth">
-            <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
+									<!-- <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lastname:</label> -->
+									<div class="flex half-fieldwidth">
+										<span
+											class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600"
+										>
+											<svg
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="w-5 h-5 text-gray-500 dark:text-gray-400"
+												fill="currentColor"
+												viewBox="0 0 25 25"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													fill-rule="evenodd"
+													clip-rule="evenodd"
+													d="M12 13.5C13.933 13.5 15.5 11.933 15.5 10C15.5 8.067 13.933 6.5 12 6.5C10.067 6.5 8.5 8.067 8.5 10C8.5 11.933 10.067 13.5 12 13.5ZM12 11.5C12.8284 11.5 13.5 10.8284 13.5 10C13.5 9.17157 12.8284 8.5 12 8.5C11.1716 8.5 10.5 9.17157 10.5 10C10.5 10.8284 11.1716 11.5 12 11.5Z"
+													fill="gray"></path>
+												<path
+													fill-rule="evenodd"
+													clip-rule="evenodd"
+													d="M17.2112 20.5365C20.0833 18.7794 22 15.6136 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 14.4815 2.90389 16.752 4.4004 18.5C4.40041 18.5 4.4004 18.5 4.4004 18.5C4.77735 18.9403 5.1919 19.3474 5.63907 19.7165C7.36766 21.143 9.58376 22 12 22C13.9093 22 15.6936 21.4649 17.2112 20.5365ZM18.1513 17.1152C19.3057 15.7285 20 13.9453 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 13.9453 4.69434 15.7285 5.84871 17.1152C7.54517 15.7898 9.68034 15 12 15C14.3196 15 16.4548 15.7898 18.1513 17.1152ZM16.665 18.4998C15.3511 17.5548 13.7409 17 12 17C10.2591 17 8.64889 17.5548 7.33501 18.4998C8.57009 19.3878 10.0686 19.9325 11.6908 19.9941C11.7934 19.998 11.8964 20 12 20C12.1208 20 12.241 19.9973 12.3605 19.992C13.963 19.921 15.4429 19.3785 16.665 18.4998Z"
+													fill="gray"></path>
+											</svg>
+										</span>
+										<input
+											type="text"
+											id="lastname"
+											name="lastname"
+											class="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 placeholder-gray-800 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+											placeholder="Last Name"
+											required
+										/>
+									</div>
+								</div>
+								<!-- end of flex row -->
+								<br />
 
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 25 25"  xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7ZM14 7C14 8.10457 13.1046 9 12 9C10.8954 9 10 8.10457 10 7C10 5.89543 10.8954 5 12 5C13.1046 5 14 5.89543 14 7Z" fill="gray"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 17.1666C20 16.7333 19.8642 16.3074 19.5815 15.979C17.7477 13.8488 15.0313 12.5 12 12.5C8.96866 12.5 6.25235 13.8488 4.41847 15.979C4.13576 16.3074 4 16.7333 4 17.1666V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V17.1666ZM18 17.2083C16.5313 15.5445 14.3887 14.5 12 14.5C9.61132 14.5 7.46872 15.5445 6 17.2083V19H18V17.2083ZM6.00017 17.1622C6.00017 17.1622 6.00018 17.1622 6.00017 17.1623C6.00016 17.1624 6.00015 17.1625 6.00012 17.1627C6.00014 17.1625 6.00016 17.1623 6.00017 17.1622Z" fill="gray"/>
-                    </svg>
-                           
-            </span>
-            <input type="text" id="firstname" name="firstname" class="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 placeholder-gray-800 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="First Name" required />
-        </div><br>
+								<!-- <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label> -->
+								<div class="flex fieldwidth">
+									<span
+										class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600"
+									>
+										<svg
+											aria-hidden="true"
+											class="w-5 h-5 text-gray-500 dark:text-gray-400"
+											fill="currentColor"
+											viewBox="0 0 20 20"
+											xmlns="http://www.w3.org/2000/svg"
+											><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path
+												d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg
+										>
+									</span>
+									<input
+										type="email"
+										id="email"
+										name="email"
+										class="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 placeholder-gray-800 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+										placeholder="Email"
+										required
+									/>
+								</div>
+								<br />
+								<!-- <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label> -->
+								<div class="flex fieldwidth">
+									<span
+										class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600"
+									>
+										<svg
+											aria-hidden="true"
+											class="w-5 h-5 text-gray-500 dark:text-gray-400"
+											fill="currentColor"
+											viewBox="0 0 25 25"
+											xmlns="http://www.w3.org/2000/svg"
+										>
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M21.0047 21.342C21.6329 20.8043 21.9962 20.02 22 19.1931V16.1795C22 15.3021 21.4281 14.5272 20.5898 14.2685L17.1131 13.1956C16.4856 13.002 15.8031 13.1287 15.2869 13.5346L13.8995 14.6258C13.0354 14.0205 12.2118 13.3319 11.4399 12.5601C10.6681 11.7882 9.97951 10.9646 9.37419 10.1005L10.4654 8.71309C10.8713 8.19694 10.998 7.5144 10.8044 6.88693L9.73153 3.41025C9.47281 2.57186 8.69786 2 7.82046 2H4.8069C3.98001 2.00381 3.19565 2.3671 2.65797 2.99532C2.21357 3.51456 1.96206 4.17697 2.00467 4.85909C2.27326 9.15824 4.04992 13.3803 7.33479 16.6652C10.6197 19.9501 14.8418 21.7267 19.1409 21.9953C19.823 22.0379 20.4854 21.7864 21.0047 21.342ZM7.80217 8.86404C7.257 9.55719 7.23015 10.5256 7.73607 11.2479C8.40782 12.2069 9.17126 13.1198 10.0257 13.9743C10.8802 14.8287 11.7931 15.5922 12.7521 16.2639C13.4744 16.7698 14.4428 16.743 15.136 16.1978L16.5233 15.1067L20 16.1795V19.1872C19.9979 19.4317 19.8901 19.6635 19.7042 19.8226C19.5325 19.9695 19.3695 20.0057 19.2656 19.9992C15.434 19.7598 11.6762 18.1782 8.749 15.251C5.82181 12.3238 4.24016 8.56596 4.00078 4.73438C3.99429 4.63048 4.03046 4.46752 4.17743 4.2958C4.33653 4.10991 4.5683 4.00206 4.81287 4H7.82046L8.89334 7.47667L7.80217 8.86404Z"
+											></path>
+										</svg>
+									</span>
 
-        <!-- <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lastname:</label> -->
-        <div class="flex  half-fieldwidth">
-            <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 25 25"  xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 13.5C13.933 13.5 15.5 11.933 15.5 10C15.5 8.067 13.933 6.5 12 6.5C10.067 6.5 8.5 8.067 8.5 10C8.5 11.933 10.067 13.5 12 13.5ZM12 11.5C12.8284 11.5 13.5 10.8284 13.5 10C13.5 9.17157 12.8284 8.5 12 8.5C11.1716 8.5 10.5 9.17157 10.5 10C10.5 10.8284 11.1716 11.5 12 11.5Z" fill="gray"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2112 20.5365C20.0833 18.7794 22 15.6136 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 14.4815 2.90389 16.752 4.4004 18.5C4.40041 18.5 4.4004 18.5 4.4004 18.5C4.77735 18.9403 5.1919 19.3474 5.63907 19.7165C7.36766 21.143 9.58376 22 12 22C13.9093 22 15.6936 21.4649 17.2112 20.5365ZM18.1513 17.1152C19.3057 15.7285 20 13.9453 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 13.9453 4.69434 15.7285 5.84871 17.1152C7.54517 15.7898 9.68034 15 12 15C14.3196 15 16.4548 15.7898 18.1513 17.1152ZM16.665 18.4998C15.3511 17.5548 13.7409 17 12 17C10.2591 17 8.64889 17.5548 7.33501 18.4998C8.57009 19.3878 10.0686 19.9325 11.6908 19.9941C11.7934 19.998 11.8964 20 12 20C12.1208 20 12.241 19.9973 12.3605 19.992C13.963 19.921 15.4429 19.3785 16.665 18.4998Z" fill="gray"/>
-                    </svg>
-                            
-            </span>
-            <input type="text" id="lastname" name="lastname" class="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 placeholder-gray-800 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Last Name" required />
-        </div>
-    </div> 
-    <!-- end of flex row -->
-    <br>
-  
+									<input
+										type="tel"
+										id="phone"
+										name="phone"
+										onblur="checkPhoneNumber(this.value)"
+										oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+										maxlength="10"
+										class="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:bg-gray-700 placeholder-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+										placeholder="Phone"
+										required
+									/>
+								</div>
 
+								<br />
+								<fieldset>
+									<legend class="sr-only">How Many Rooms?</legend>
+									<label for="rooms" class="block mb-2 text-sm font-bold text-gray-900 dark:text-white pb-5"
+										>How Many Rooms?</label
+									>
+									<div class="flex items-center mb-4" id="rooms">
+										<input
+											id="1-br-property"
+											type="radio"
+											name="rooms"
+											value="1 br property"
+											class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+										/>
+										<label
+											for="country-option-1"
+											class="block pl-5 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+										>
+											1 br property
+										</label>
+									</div>
 
-        <!-- <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label> -->
-        <div class="flex fieldwidth">
-            <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-            </span>
-            <input type="email" id="email" name="email" class="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 placeholder-gray-800 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email" required />
-        </div>
-        <br>
-        <!-- <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label> -->
-        <div class="flex fieldwidth">
-        <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-            
-            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 25 25"  xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.0047 21.342C21.6329 20.8043 21.9962 20.02 22 19.1931V16.1795C22 15.3021 21.4281 14.5272 20.5898 14.2685L17.1131 13.1956C16.4856 13.002 15.8031 13.1287 15.2869 13.5346L13.8995 14.6258C13.0354 14.0205 12.2118 13.3319 11.4399 12.5601C10.6681 11.7882 9.97951 10.9646 9.37419 10.1005L10.4654 8.71309C10.8713 8.19694 10.998 7.5144 10.8044 6.88693L9.73153 3.41025C9.47281 2.57186 8.69786 2 7.82046 2H4.8069C3.98001 2.00381 3.19565 2.3671 2.65797 2.99532C2.21357 3.51456 1.96206 4.17697 2.00467 4.85909C2.27326 9.15824 4.04992 13.3803 7.33479 16.6652C10.6197 19.9501 14.8418 21.7267 19.1409 21.9953C19.823 22.0379 20.4854 21.7864 21.0047 21.342ZM7.80217 8.86404C7.257 9.55719 7.23015 10.5256 7.73607 11.2479C8.40782 12.2069 9.17126 13.1198 10.0257 13.9743C10.8802 14.8287 11.7931 15.5922 12.7521 16.2639C13.4744 16.7698 14.4428 16.743 15.136 16.1978L16.5233 15.1067L20 16.1795V19.1872C19.9979 19.4317 19.8901 19.6635 19.7042 19.8226C19.5325 19.9695 19.3695 20.0057 19.2656 19.9992C15.434 19.7598 11.6762 18.1782 8.749 15.251C5.82181 12.3238 4.24016 8.56596 4.00078 4.73438C3.99429 4.63048 4.03046 4.46752 4.17743 4.2958C4.33653 4.10991 4.5683 4.00206 4.81287 4H7.82046L8.89334 7.47667L7.80217 8.86404Z" />
-                </svg>
-                
-        </span>
+									<div class="flex items-center mb-4">
+										<input
+											id="2-br-property"
+											type="radio"
+											name="rooms"
+											value="2 br property"
+											class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+										/>
+										<label
+											for="country-option-2"
+											class="block pl-5 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+										>
+											2 br property
+										</label>
+									</div>
 
-        
-        <input type="tel" id="phone" name="phone" onblur="checkPhoneNumber(this.value)" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" class="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 placeholder-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Phone" required />
-        </div>
+									<div class="flex items-center mb-4">
+										<input
+											id="3-br-property"
+											type="radio"
+											name="rooms"
+											value="3 br property"
+											class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600"
+										/>
+										<label
+											for="country-option-3"
+											class="block ml-2 pl-5 text-sm font-medium text-gray-900 dark:text-gray-300"
+										>
+											3 br property
+										</label>
+									</div>
 
-        <br>
-        <fieldset>
-            <legend class="sr-only">How Many Rooms?</legend>
-            <label for="rooms" class="block mb-2 text-sm font-bold text-gray-900 dark:text-white pb-5">How Many Rooms?</label>
-            <div class="flex items-center mb-4" id="rooms">
-            <input id="1-br-property" type="radio" name="rooms" value="1 br property" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
-            <label for="country-option-1" class="block pl-5 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                1 br property
-            </label>
-            </div>
-        
-            <div class="flex items-center mb-4">
-            <input id="2-br-property" type="radio" name="rooms" value="2 br property" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
-            <label for="country-option-2" class="block pl-5 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                2 br property
-            </label>
-            </div>
-        
-            <div class="flex items-center mb-4">
-            <input id="3-br-property" type="radio" name="rooms" value="3 br property" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
-            <label for="country-option-3" class="block ml-2 pl-5 text-sm font-medium text-gray-900 dark:text-gray-300">
-                3 br property
-            </label>
-            </div>
-        
-            <div class="flex items-center mb-4">
-            <input id="4-br-property" type="radio" name="rooms" value="4+ br property" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring:blue-300 dark:focus-ring-blue-600 dark:bg-gray-700 dark:border-gray-600" required>
-            <label for="country-option-4" class="block ml-2 pl-5 text-sm font-medium text-gray-900 dark:text-gray-300">
-                4+ br property
-            </label>
-            </div>
-        
-            
-        </fieldset>
+									<div class="flex items-center mb-4">
+										<input
+											id="4-br-property"
+											type="radio"
+											name="rooms"
+											value="4+ br property"
+											class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring:blue-300 dark:focus-ring-blue-600 dark:bg-gray-700 dark:border-gray-600"
+											required
+										/>
+										<label
+											for="country-option-4"
+											class="block ml-2 pl-5 text-sm font-medium text-gray-900 dark:text-gray-300"
+										>
+											4+ br property
+										</label>
+									</div>
+								</fieldset>
+							</div>
+							<div id="form-2" class="hide">
+								<h1 class="text-3xl pb-5 pt-5 text-left">Tell Us About Your Move</h1>
+								<br />
+								<label for="fromaddress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+									>From: Suburb & Postcode</label
+								>
+								<div class="flex">
+									<span
+										class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600"
+									>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M4.00074 11V20C4.00074 20.5522 4.44845 21 5.00074 21H10.0007C10.553 21 11.0007 20.5522 11.0007 20V14H13.0007V20C13.0007 20.5522 13.4485 21 14.0007 21H19.0007C19.553 21 20.0007 20.5522 20.0007 20V11H21.8159C22.284 11 22.4954 10.4143 22.1353 10.1153L13.2784 2.76087C12.5377 2.14579 11.4638 2.14579 10.7231 2.76087L1.86615 10.1153C1.50603 10.4143 1.71748 11 2.18557 11H4.00074ZM15.0007 14V19H18.0007L18.0007 9.2817L12.0007 4.29956L6.00073 9.28171V10.9955L6.00074 11V19H9.00074L9.00073 13C9.00073 12.4477 9.44845 12 10.0007 12H14.0007C14.553 12 15.0007 12.4477 15.0007 13V13.9956L15.0007 14Z"
+												fill="black"></path>
+										</svg>
+									</span>
+									<input
+										type="text"
+										id="fromaddress"
+										name="fromaddress"
+										class="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+										placeholder="Sunnybank 4109"
+									/>
+								</div>
+								<br />
+								<label for="toaddress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+									>To: Suburb & Postcode</label
+								>
+								<div class="flex">
+									<span
+										class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600"
+									>
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path
+												fill-rule="evenodd"
+												clip-rule="evenodd"
+												d="M4.00074 11V20C4.00074 20.5522 4.44845 21 5.00074 21H10.0007C10.553 21 11.0007 20.5522 11.0007 20V14H13.0007V20C13.0007 20.5522 13.4485 21 14.0007 21H19.0007C19.553 21 20.0007 20.5522 20.0007 20V11H21.8159C22.284 11 22.4954 10.4143 22.1353 10.1153L13.2784 2.76087C12.5377 2.14579 11.4638 2.14579 10.7231 2.76087L1.86615 10.1153C1.50603 10.4143 1.71748 11 2.18557 11H4.00074ZM15.0007 14V19H18.0007L18.0007 9.2817L12.0007 4.29956L6.00073 9.28171V10.9955L6.00074 11V19H9.00074L9.00073 13C9.00073 12.4477 9.44845 12 10.0007 12H14.0007C14.553 12 15.0007 12.4477 15.0007 13V13.9956L15.0007 14Z"
+												fill="black"></path>
+										</svg>
+									</span>
+									<input
+										type="text"
+										id="toaddress"
+										name="toaddress"
+										class="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+										placeholder="Carindale 4152"
+									/>
+								</div>
+								<br />
 
-        </div>
-        <div id="form-2" class="hide">
-            <h1 class="text-3xl pb-5 pt-5 text-left">Tell Us About Your Move</h1>
-            <br>
-            <label for="fromaddress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">From: Suburb & Postcode</label>
-            <div class="flex">
-                <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.00074 11V20C4.00074 20.5522 4.44845 21 5.00074 21H10.0007C10.553 21 11.0007 20.5522 11.0007 20V14H13.0007V20C13.0007 20.5522 13.4485 21 14.0007 21H19.0007C19.553 21 20.0007 20.5522 20.0007 20V11H21.8159C22.284 11 22.4954 10.4143 22.1353 10.1153L13.2784 2.76087C12.5377 2.14579 11.4638 2.14579 10.7231 2.76087L1.86615 10.1153C1.50603 10.4143 1.71748 11 2.18557 11H4.00074ZM15.0007 14V19H18.0007L18.0007 9.2817L12.0007 4.29956L6.00073 9.28171V10.9955L6.00074 11V19H9.00074L9.00073 13C9.00073 12.4477 9.44845 12 10.0007 12H14.0007C14.553 12 15.0007 12.4477 15.0007 13V13.9956L15.0007 14Z" fill="black"/>
-                        </svg>
-                        
-                </span>
-                <input type="text" id="fromaddress" name="fromaddress" class="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Sunnybank 4109" >
-            </div>
-            <br>
-            <label for="toaddress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">To: Suburb & Postcode</label>
-            <div class="flex">
-                <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 rounded-l-md border border-r-0 border-gray-300 dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.00074 11V20C4.00074 20.5522 4.44845 21 5.00074 21H10.0007C10.553 21 11.0007 20.5522 11.0007 20V14H13.0007V20C13.0007 20.5522 13.4485 21 14.0007 21H19.0007C19.553 21 20.0007 20.5522 20.0007 20V11H21.8159C22.284 11 22.4954 10.4143 22.1353 10.1153L13.2784 2.76087C12.5377 2.14579 11.4638 2.14579 10.7231 2.76087L1.86615 10.1153C1.50603 10.4143 1.71748 11 2.18557 11H4.00074ZM15.0007 14V19H18.0007L18.0007 9.2817L12.0007 4.29956L6.00073 9.28171V10.9955L6.00074 11V19H9.00074L9.00073 13C9.00073 12.4477 9.44845 12 10.0007 12H14.0007C14.553 12 15.0007 12.4477 15.0007 13V13.9956L15.0007 14Z" fill="black"/>
-                        </svg>
-                        
-                </span>
-                <input type="text" id="toaddress" name="toaddress" class="rounded-none rounded-r-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Carindale 4152" >
-            </div>
-            <br>
-            
-            <label for="date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date You Want To Move</label>
-            <div class="relative">
-                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-                </div>
-                <input id="date" name="date" datepicker  datepicker-autohide datepicker-format="dd-mm-yyyy" type="text" value="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
-            </div>
-            <br>  
-            <h1 id="submit-message" class="hide text-center">Submitting! Please wait ...</h1> 
-  <div class="hide m-auto min-w-full text-center mt-5" id="spinner" ><img class="text-center" style="margin: auto;" src="spinner.gif"  width="100" height="100"></div>
+								<label for="date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+									>Date You Want To Move</label
+								>
+								<div class="relative">
+									<div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+										<svg
+											aria-hidden="true"
+											class="w-5 h-5 text-gray-500 dark:text-gray-400"
+											fill="currentColor"
+											viewBox="0 0 20 20"
+											xmlns="http://www.w3.org/2000/svg"
+											><path
+												fill-rule="evenodd"
+												d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+												clip-rule="evenodd"></path></svg
+										>
+									</div>
+									<input
+										id="date"
+										name="date"
+										datepicker
+										datepicker-autohide
+										datepicker-format="dd-mm-yyyy"
+										type="text"
+										value=""
+										class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+										placeholder="Select date"
+										required
+									/>
+								</div>
+								<br />
+								<h1 id="submit-message" class="hide text-center">Submitting! Please wait ...</h1>
+								<div class="hide m-auto min-w-full text-center mt-5" id="spinner">
+									<img class="text-center" style="margin: auto;" src="spinner.gif" width="100" height="100" />
+								</div>
+							</div>
+							<!-- end form-2 div -->
+						</div>
 
+						<!-- <button type="submit" id="next-button" style="float:left;" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-md  mt-5 px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Next</button> -->
 
+						<!-- <button type="button" id="back-button" style="float:left;" class="hide text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-md  mt-5 px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Back</button> -->
 
-        </div> <!-- end form-2 div -->
-    </div>
+						<!-- <button type="submit" id="submit-button" class="hide text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-md text-md  mt-5 px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Get My Quote!</button> -->
 
-    <!-- <button type="submit" id="next-button" style="float:left;" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-md  mt-5 px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Next</button> -->
+						<button type="submit" id="next-button" style="float:left;" class="btn btn-primary sm:mb-0 w-1/4"
+							>Next</button
+						>
 
+						<button type="button" id="back-button" style="float:left;" class="hide btn btn-primary sm:mb-0 w-1/4"
+							>Back</button
+						>
 
-    <!-- <button type="button" id="back-button" style="float:left;" class="hide text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-md  mt-5 px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Back</button> -->
+						<button type="submit" id="submit-button" class="hide btn btn-primary sm:mb-0 w-2/4">Get My Quote!</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <!-- <button type="submit" id="submit-button" class="hide text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-md text-md  mt-5 px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Get My Quote!</button> -->
+	<div id="success-message" class="hide">
+		<div id="success-anchor">dsfdsffsd</div>
+		<div class="m-auto min-w-full text-center mt-5 mb-5" id="tick">
+			<img class="text-center" style="margin: auto;" src="orange-tick.png" width="100" height="100" />
+		</div>
+		<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-center">
+			Success!
+		</h2>
+		<h3 class="text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-center">
+			Thank you for your quote request
+		</h3>
+		<p class="text-center pt-0">We will be in touch shortly</p>
 
-    <button type="submit" id="next-button" style="float:left;" class="btn btn-primary sm:mb-0 w-1/4 ">Next</button>
-
-    <button type="button" id="back-button" style="float:left;" class="hide btn btn-primary sm:mb-0 w-1/4">Back</button>
-
-    <button type="submit" id="submit-button" class="hide btn btn-primary sm:mb-0 w-2/4">Get My Quote!</button>
-    
-  
-</form>
-  
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div id="success-message" class="hide">
-        <div id="success-anchor">dsfdsffsd</div>
-        <div class="m-auto min-w-full text-center mt-5 mb-5" id="tick" ><img class="text-center" style="margin: auto;" src="orange-tick.png"  width="100" height="100"></div>
-        <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-center">Success!</h2> 
-        <h3 class="text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-center">Thank you for your quote request</h3>
-        <p class=" text-center pt-0">We will be in touch shortly</p>
-        
-        
-        <br><br>
-    </div>
-    
+		<br /><br />
+	</div>
 </div>
-
-
-
-
-
-
-  
-
-
-
-      
