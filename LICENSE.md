@@ -1,1 +1,1 @@
-All Rights Reserved Base7.pro 2023
+All Rights Reserved - Crypto Security Tools &copy; 2024
