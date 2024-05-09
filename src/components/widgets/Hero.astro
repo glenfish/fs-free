@@ -4,15 +4,31 @@ import { Picture } from '@astrojs/image/components';
 ---
 
 <section>
+	<Picture
+		src={import('~/assets/images/hero-image.webp')}
+		class="mx-auto pt-5"
+		widths={[400, 768, 1000]}
+		sizes="(max-width: 400px) 400px, (max-width: 768px) 768px, 1000px"
+		alt="Hero Image"
+		aspectRatio={1200 / 600}
+		loading="eager"
+		width={1200}
+		height={563}
+		style="max-width:99%"
+	/>
 	<div class="max-w-6xl mx-auto px-4 sm:px-6">
 		<div class="py-6 md:pt-10">
 			<div class="text-center pb-0 md:pb-0 max-w-5xl mx-auto">
-				<h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
-					Moving House in Brisbane or Gold Coast?<br />
-					<span>Best & Cheapest</span>
-					<span class="sm:whitespace-nowrap">Moving Quotes</span>
+				<h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+					Hiding Your Wallet Seeds Is<br />
+					<span class="underline">Not A Security Plan</span>
+					<span class="sm:whitespace-nowrap"></span>
 				</h1>
-				<div class="max-w-3xl mx-auto">
+				<p class="text-2xl max-w-3/4 center py-10">
+					Crypto Self-Custody has a couple of major problems. We solved these over the past 2 years. We combined
+					simplicity with security. And we're making it free for you. Here's how ...
+				</p>
+				<!-- <div class="max-w-3xl mx-auto">
 					<p class="text-xl text-orange-500 mb-8 dark:text-slate-100">
 						<span class="font-semibold">Queensland based iSelect Movers</span> has many recommended removal teams in your
 						local area <span class="inline sm:hidden">...</span><span class="hidden sm:inline"
@@ -25,14 +41,14 @@ import { Picture } from '@astrojs/image/components';
 								<Icon name="tabler:download" class="w-5 h-5 mr-1 -ml-1.5" /> Instant Moving Quote
 							</a>
 						</div>
-						<!-- <div class="flex w-full sm:w-auto">
+						<div class="flex w-full sm:w-auto">
 							<a
 								class="btn w-full"
 								href="#features">Contact Us</a
 							>
-						</div> -->
+						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<!-- <div>
 				<div class="relative m-auto max-w-4xl">
