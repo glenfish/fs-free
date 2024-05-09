@@ -18,10 +18,6 @@ const { meta = {} } = Astro.props;
 	</head>
 
 	<body class="antialiased text-gray-900 dark:text-slate-500 tracking-tight bg-white dark:bg-slate-900">
-		<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMPS25L"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
 		<slot />
 		<BasicScripts />
 		<style is:global>
@@ -29,6 +25,6 @@ const { meta = {} } = Astro.props;
 				content-visibility: auto;
 			}
 		</style>
-		<FormScripts />  
+		<FormScripts />
 	</body>
 </html>
