@@ -4,56 +4,64 @@ import { Icon } from 'astro-icon';
 const items = [
 	[
 		{
-			title: 'Get the best price possible.',
+			title: '1. Get the entire list of seed words',
 			description:
-				'With iSelect Movers, you get a choice of removals team to suit your moving requirements and budget.',
+				"There's 2048 possible words in the entire list. You can download them online:\nhttps://github.com/bitcoin/bips/blob/master/bip-0039/bip-0039-wordlists.md",
 			icon: 'tabler:list-check',
 		},
 		{
-			title: 'All removalists are vetted',
-			description:
-				'Quality removalist are always better if you value your furniture.',
+			title: '2. Arrange them alphabetically',
+			description: 'Open in a spreadsheet ordered from A to Z and assign them numbers from 1 to 2048',
 			icon: 'tabler:list-check',
 		},
 		{
-			title: 'Expeirenced removalists',
+			title: '3. Randomize the numbers',
 			description:
-				'A cheap removalist will be your most expensive mistake, so always go with experienced and knowledgeable professionals.',
+				'Create a random number mapping to the list of 2048 numbers. This is your seedmap, also known as a cipher',
+			icon: 'tabler:list-check',
+		},
+		{
+			title: '4. Map your seed words to the numbers',
+			description:
+				'Go through the seed phrase list one word at a time for each of your wallets and write down the corresponding number',
 			icon: 'tabler:list-check',
 		},
 	],
 	[
 		{
-			title: 'Get other services',
-			description:
-				'Some quotes you receive may be able to offer other services, such as Bond Cleaning and Home Services if required. Just ask at the time of booking.',
+			title: '5. Save these numbers as text on a USB',
+			description: 'Create a text file or a PDF of all your wallet seed numbers and save it on a USB drive',
 			icon: 'tabler:list-check',
 		},
 		{
-			title: 'Speak with a real person',
+			title: '6. Password protect your seedmap',
 			description:
-				'Speak with your removalist before you lock-it-in for peace of mind and the very best price.',
+				'Create an encrypted password protected PDF file of your seedmap and save it on a separate USB drive',
 			icon: 'tabler:list-check',
 		},
 		{
-			title: 'Save your back',
+			title: '7. Save your password',
+			description: 'Store your password across multiple locations. This is how you will decrypt your seedmap',
+			icon: 'tabler:list-check',
+		},
+		{
+			title: '8. Make copies of both USB drives',
 			description:
-				'Full loading and unloading is part of every service, so you can relax and save your back and your goods.',
+				'Make multiple copies of both USB drives and store them in separate locations. You can update them as you add or change wallets',
 			icon: 'tabler:list-check',
 		},
 	],
 ];
 ---
+
 <div id="features-anchor"></div>
 <section class="scroll-mt-16" id="features">
 	<div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20">
 		<div class="mb-10 md:mx-auto sm:text-center md:mb-12 max-w-3xl">
-			<p class="text-base text-orange-600 dark:text-primary-200 font-semibold tracking-wide uppercase">Features</p>
-			<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
-				What you get with <span class="whitespace-nowrap">iSelect Movers</span>
-			</h2>
+			<p class="text-base text-orange-600 dark:text-primary-200 font-semibold tracking-wide uppercase">TLDR</p>
+			<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">How It Works</h2>
 			<p class="max-w-3xl mx-auto sm:text-center text-xl text-gray-600 dark:text-slate-400">
-				Let's take the hassel out of your moving day, in just a few minutes. 
+				Here's the short notes on how to harden your cold storage.
 			</p>
 		</div>
 		<div class="grid mx-auto space-y-6 md:grid-cols-2 md:space-y-0">
