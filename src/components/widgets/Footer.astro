@@ -32,21 +32,11 @@ const social = [
 
 <footer class="border-t border-gray-200 dark:border-slate-800">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6">
-		<div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
-			<div class="col-span-12 lg:col-span-4">
-				<div class="mb-2">
+		<div class="grid grid-cols-1 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
+			<div class="col-span-1 lg:col-span-1">
+				<!-- <div class="mb-2">
 					<a class="inline-block font-bold text-xl" href={getHomePermalink()}>Crypto Security Tools</a>
-				</div>
-				<div class="text-sm text-gray-600">
-					<a
-						class="text-gray-600 hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
-						href="#">Terms</a
-					> ·
-					<a
-						class="text-gray-600 hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
-						href="#">Privacy Policy</a
-					>
-				</div>
+				</div> -->
 			</div>
 			{
 				links.map(({ title, items }) => (
@@ -71,7 +61,7 @@ const social = [
 			}
 		</div>
 		<div class="md:flex md:items-center md:justify-between py-6 md:py-8">
-			<!-- <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0">
+			<ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0">
 				{
 					social.map(({ label, href, icon }) => (
 						<li>
@@ -85,11 +75,11 @@ const social = [
 						</li>
 					))
 				}
-			</ul> -->
+			</ul>
 
-			<div class="text-sm text-gray-700 mr-4 dark:text-slate-400"></div>
-
-			Crypto Security Tools. &copy; 2024 All rights reserved.
+			<div class="text-sm text-gray-700 mr-4 dark:text-slate-400">
+				Crypto Security Tools. &copy; 2024 All rights reserved.
+			</div>
 		</div>
 	</div>
 </footer>
