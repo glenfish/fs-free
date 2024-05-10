@@ -1,11 +1,11 @@
 export const SITE = {
-	name: 'FreezeSeeds Free - Hardened Cold Storage for your wallets',
+	name: 'Crypto Security Tools - Hardened Cold Storage for your wallets',
 
 	origin: 'https://cryptosecuritytools.com',
 	basePathname: '/',
 	trailingSlash: false,
 
-	title: 'FreezeSeeds Free',
+	title: 'Crypto Security Tools',
 	description: 'Learn how to harden and backup your seeds for long term cold storage.',
 
 	googleAnalyticsId: false, // or "G-XXXXXXXXXX",
