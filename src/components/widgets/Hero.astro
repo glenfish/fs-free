@@ -16,61 +16,31 @@ import { Picture } from '@astrojs/image/components';
 		height={563}
 		style="max-width:100%"
 	/>
-	<div class="max-w-6xl mx-auto px-2 sm:px-6">
+	<div class="max-w-6xl mx-auto px-0 sm:px-6">
 		<div class="py-3 md:pt-5 pt-3">
-			<div class="text-center pb-0 md:pb-0 max-w-5xl mx-auto">
+			<div class="text-left pb-0 md:pb-0 max-w-5xl mx-auto">
 				<h1
-					class="text-3xl md:text-4xl lg:text-5xl sm:text-4xl font-bold leading-tighter tracking-tighter mb-3 font-heading relative top-2"
+					class="text-center text-3xl md:text-4xl lg:text-5xl sm:text-4xl font-bold leading-tighter tracking-tighter mb-5 font-heading relative top-0"
 				>
 					Hiding Wallet SeedWords Is<br />
-					<span class="text-3xl md:text-6xl sm:text-5xl">Not A Security Plan</span>
+					<span class="text-4xl md:text-6xl sm:text-5xl relative top-2 underline">Not A Security Plan</span>
 					<span class="sm:whitespace-nowrap"></span>
 				</h1>
-				<p class="text-xl max-w-[810px] w-[100%] mx-auto pt-6 pb-2 block px-2">
-					Software & hardware wallet seedphrases have <span class="bold">two major problems</span>:<br /><span
-						class="pt-5 block"
-						>If you don't back them up in multiple offline locations, you're vulnerable to <span class="bold">loss</span
-						>. And if you do, you're open to <span class="bold">theft</span>. We've solved this. Our Hardened Cold
-						Storage system is simple, secure and yours to download <span class="underline">at no cost</span>.</span
-					>
-				</p>
-				<!-- <div class="max-w-3xl mx-auto">
-					<p class="text-xl text-orange-500 mb-8 dark:text-slate-100">
-						<span class="font-semibold">Queensland based iSelect Movers</span> has many recommended removal teams in your
-						local area <span class="inline sm:hidden">...</span><span class="hidden sm:inline"
-							>ready to quote for you now!</span
-						>
-					</p>
-					<div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
-						<div class="flex w-full sm:w-auto">
-							<a class="btn btn-primary sm:mb-0 w-full" href="#iSelectMovers-Form" target="" rel="">
-								<Icon name="tabler:download" class="w-5 h-5 mr-1 -ml-1.5" /> Instant Moving Quote
-							</a>
-						</div>
-						<div class="flex w-full sm:w-auto">
-							<a
-								class="btn w-full"
-								href="#features">Contact Us</a
-							>
-						</div>
+				<p class="text-center text-2xl max-w-[810px] w-[100%] pb-0 block px-2 lg:pt-8">
+					<div class="text-xl text-center pb-4">
+						Storing software & hardware wallet seedphrases have <span class="bold">two major problems</span>:<br />
 					</div>
-				</div> -->
+					<div class="text-xl text-center py-2 bg-blue-100 mb-4 max-w-[860px] mx-auto rounded-lg w-[96%]">
+						If not backed up in multiple offline locations, it's vulnerable to <span class="bold">loss</span>.<br />If
+						it is, you're open to <span class="bold">theft</span>.
+					</div>
+					<div class="text-lg text-center pt-2">
+						We solved these problems. Our Hardened Cold Storage system is simple, secure and <span class="underline"
+							>free</span
+						>
+					</div>
+				</p>
 			</div>
-			<!-- <div>
-				<div class="relative m-auto max-w-4xl">
-					<Picture
-						src={import('~/assets/images/hero-iSelect.png')}
-						class="mx-auto rounded-md w-full"
-						widths={[400, 768, 1480]}
-						sizes="(max-width: 767px) 400px, (max-width: 1479px) 768px, 1480px"
-						alt="Hero Image"
-						aspectRatio={1480/833}
-						loading="eager"
-						width={1480}
-						height={833}
-					/>
-				</div>
-			</div> -->
 		</div>
 	</div>
 </section>
