@@ -3,30 +3,28 @@ import { Icon } from 'astro-icon';
 import { getHomePermalink, getRelativeLink } from '~/utils/permalinks';
 
 const links = [
-	{
-		title: 'Product',
-		items: [
-			{ title: 'Features', href: '#' },
-			{ title: 'Customer stories', href: '#' },
-			{ title: 'Resources', href: '#' },
-		],
-	},
-
-	{
-		title: 'Company',
-		items: [
-			{ title: 'About', href: '#' },
-			{ title: 'Blog', href: '/blog' },
-		],
-	},
+	// {
+	// 	title: 'Product',
+	// 	items: [
+	// 		{ title: 'Features', href: '#' },
+	// 		{ title: 'Customer stories', href: '#' },
+	// 		{ title: 'Resources', href: '#' },
+	// 	],
+	// },
+	// {
+	// 	title: 'Company',
+	// 	items: [
+	// 		{ title: 'About', href: '#' },
+	// 		{ title: 'Blog', href: '/blog' },
+	// 	],
+	// },
 ];
 
 const social = [
-	{ label: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
-	{ label: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-	{ label: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-	{ label: 'RSS', icon: 'tabler:rss', href: getRelativeLink('/rss.xml') },
-	{ label: 'Github', icon: 'tabler:brand-github', href: '#' },
+	{ label: 'Twitter', icon: 'tabler:brand-twitter', href: 'https://x.com/@graycode007' },
+	{ label: 'Linktree', icon: 'tabler:christmas-tree', href: 'https://nicneon.com' },
+	{ label: 'YouTube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/@cryptosecuritytools' },
+	{ label: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/glenfish' },
 ];
 ---
 
