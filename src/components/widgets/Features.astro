@@ -72,7 +72,7 @@ const items = [
 		<div class="grid mx-auto space-y-6 md:grid-cols-2 md:space-y-0">
 			{
 				items.map((subitems) => (
-					<div class="space-y-8 sm:px-8">
+					<div class="space-y-8 sm:px-8 mx-auto">
 						{subitems.map(({ title, description, icon, link, linktitle }) => (
 							<div class="flex flex-row max-w-md">
 								<div class="mb-4 mr-2">
@@ -81,7 +81,7 @@ const items = [
 									</div>
 								</div>
 								<div>
-									<h3 class="mb-3 text-xl font-bold max-w-[96%] pl-2">{title}</h3>
+									<h3 class="mb-3 text-lg md:text-xl  font-bold max-w-[96%] pl-2">{title}</h3>
 									<p class="text-gray-600 dark:text-slate-400  max-w-[92%] pl-2">
 										{description}
 
