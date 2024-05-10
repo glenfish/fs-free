@@ -6,7 +6,7 @@ import { Picture } from '@astrojs/image/components';
 <section>
 	<Picture
 		src={import('~/assets/images/hero-image-3.png')}
-		class="mx-auto pt-1"
+		class="mx-auto pt-3"
 		widths={[400, 768, 1000]}
 		sizes="(max-width: 400px) 400px, (max-width: 768px) 768px, 1000px"
 		alt="Hero Image"
@@ -14,7 +14,7 @@ import { Picture } from '@astrojs/image/components';
 		loading="eager"
 		width={1200}
 		height={563}
-		style="max-width:100%"
+		style="max-width:98%"
 	/>
 	<div class="max-w-6xl mx-auto px-0 sm:px-6">
 		<div class="py-3 md:pt-5 pt-3">
@@ -31,14 +31,16 @@ import { Picture } from '@astrojs/image/components';
 						Software & Hardware wallet seedphrase storage has <span class="bold">two major problems</span>:<br />
 					</div>
 					<div
-						class="text-xl text-center py-2 bg-gray-500 text-white mb-4 xl:max-w-[850px] lg:max-w-[700px] max-w-[680px] mx-auto rounded-lg w-[96%] px-2"
+						class="text-xl text-center py-2 bg-gray-100 border border-gray-500 t mb-4 xl:max-w-[850px] lg:max-w-[700px] max-w-[680px] mx-auto rounded-lg w-[94%] px-2"
 					>
 						If not backed up in multiple offline locations, you're vulnerable to <span class="bold underline">loss</span
 						>.<br />And if it is, you're open to <span class="bold underline">theft</span>.
 					</div>
 					<div class="text-lg text-center pt-2">
-						<span class="text-xl bold text-orange-500">Both these problems have been solved</span><br />Below are the
-						exact steps. Or download the <a href="#" class="underline">FREE PDF</a>
+						<span class="text-xl bold text-orange-500 block">Both problems have been solved</span><span
+							class="pt-3 block"
+							>Follow the steps below<br />Or download your <a href="#" class="underline">FREE PDF</a></span
+						>
 					</div>
 				</p>
 			</div>
