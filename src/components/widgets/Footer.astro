@@ -41,7 +41,7 @@ const social = [
 					<div class="col-span-6 md:col-span-3 lg:col-span-2">
 						<div class="text-gray-800 dark:text-gray-300 font-large mb-2">{title}</div>
 						{items && Array.isArray(items) && items.length > 0 && (
-							<ul class="text-base">
+							<ul class="text-sm">
 								{items.map(({ title, href }) => (
 									<li class="mb-2">
 										<a
@@ -64,7 +64,7 @@ const social = [
 					social.map(({ label, href, icon }) => (
 						<li>
 							<a
-								class="text-gray-400 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-base p-2.5 inline-flex items-center"
+								class="text-gray-400 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
 								aria-label={label}
 								href={href}
 							>
@@ -75,8 +75,8 @@ const social = [
 				}
 			</ul>
 
-			<div class="text-base text-gray-700 mr-4 dark:text-slate-400">
-				Crypto Security Tools. &copy; 2024 All rights reserved.
+			<div class="text-sm text-gray-700 mr-4 dark:text-slate-400">
+				Crypto Security Tools &copy; 2024 All rights reserved.
 			</div>
 		</div>
 	</div>
