@@ -5,19 +5,21 @@ const items = [
 	[
 		{
 			title: '1. Get seedword list',
-			description: "There's 2048 possible words in the entire BIP39 word list. You can download them ",
+			description:
+				"There's 2048 possible words in the entire BIP39 word list. Your wallet seedphrase backup is usually 12 or 24 words in length and these words come from this list. You can download them ",
 			icon: 'tabler:list-check',
 			link: 'https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt',
 			linktitle: '→ here',
 		},
 		{
 			title: '2. Arrange alphabetically',
-			description: 'Open in a spreadsheet ordered from A to Z and assign them numbers from 1 to 2048',
+			description:
+				'Open these 2048 words in a spreadsheet (one per row) ordered from A to Z and assign them numbers from 1 to 2048',
 			icon: 'tabler:list-check',
 		},
 		{
 			title: '3. Randomize numbers',
-			description: 'Create a random number mapping to the list of 2048 numbers. This is your `seed map`',
+			description: 'Create a random number mapping to the list of 2048 numbers. This is your `seed map`.',
 			icon: 'tabler:list-check',
 		},
 		{
@@ -34,8 +36,8 @@ const items = [
 			icon: 'tabler:list-check',
 		},
 		{
-			title: '6. Encrypt seedmap',
-			description: 'Create an password-protected PDF file of your seedmap and save it on a second USB drive',
+			title: '6. Encrypt seed map',
+			description: 'Create a password-protected PDF of your seed map and save it to a second USB drive',
 			icon: 'tabler:list-check',
 			link: 'https://pdfoffline.com',
 			linktitle: ' → Offline PDF Maker',
@@ -43,11 +45,11 @@ const items = [
 		{
 			title: '7. Save master password',
 			description:
-				'Store your password across multiple safe locations. Do not store it with the USBs. This is how you will unlock your seedmap',
+				'Store your password in multiple safe locations. Do not store it on or near the USBs. This is how you will unlock your seed map when you restore your wallets',
 			icon: 'tabler:list-check',
 		},
 		{
-			title: '8. Make USB copies',
+			title: '8. Copy USBs',
 			description:
 				'Duplicate the 2 USB drives and store them in separate physical locations. (eg. home, work, relative) You can update them as you add or change wallets',
 			icon: 'tabler:list-check',
