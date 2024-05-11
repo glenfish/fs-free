@@ -4,33 +4,44 @@ import { Icon } from 'astro-icon';
 const items = [
 	[
 		{
-			question: 'Do I really need 3 quotes; wont they be all the same price?',
+			question: 'How do I know if I can create a hardened backup of my wallet?',
 			answer: `
 
-Yes it is important. At least if you have 2-3 quotes, you can check the price differences, including the truck sizes and availablity for the date you require to move. These quotes are 100% completely free for yourself and we do not charge you any type of booking fee whatsoever. Your quote is sent directly to your mobile number and email in a format, giving you the prices, truck size required, day of move, distance and location Locally, Interstate or Regional.
+This system creates hardened backups of any HD crypto wallet that uses the BIP39 standard. This includes wallets like Ledger, Trezor, and many others. If you aren't sure, search for your wallet name and "BIP39" to see if it uses this standard.
 .`,
 		},
 		{
-			question: 'Is there a set rate for a removal job?',
-			answer: `The only set rates for removals are generally an hourly rate. Often used by small man and van companies. Many factors can influence a move, these include access availability, distance moving as well as a persons contents of their home. Companies prefer to look at a move then the can be prepared for any problems like parking.`,
+			question: 'Which wallets are supported?',
+			answer: `SLIP39 is not supported. Trezor offers a version of their Model T which uses SLIP39 and it is not compatible with this system.`,
 		},
 		{
-			question: "How do removal companies come up with quotation prices?",
-			answer: `Moving the contents of your home is generally calculated by the size of the Truck required, including your moving distance.
-
-Occasionally, if you’re moving Local, you can use a smaller truck and do a second load, depending on access of both properties, including timeframes of move required, however, that is something you’re accredited removalist would discuss with you prior to booking as you would have access to small medium and large trucks.
-
-In comparison, Local moves are always usually an hourly rate. Removalists take into consideration, whether it is a 1, 2 or 3 men job including any heavy items, pool tables, double door fridges, flights of stairs, pianos, having to utilise a lift at properties and or stairways.
- Long distance moves will take into account usually more than 5 hours in travel, including interstate and can be on a fixed price quote pending access of the properties and items to be moved in full detail.`,
+			question: 'How can I trust you?',
+			answer: `No trust is required. The steps are clearly explained and you are the one carrything them out, on your own computer, offline. In fact we deliberately designed this system to be trust-less. You can even restore your wallet without using any special tools. Simply unlock the seedmap with your password and manually match your seed codes to the BIP39 word list.`,
+		},
+		{
+			question: 'Is this totally an offline cold storage backup solution?',
+			answer: `Yes, if you choose to follow the directions as given, you can create a backup of your wallet that never touches the internet. The system is designed to be used offline. There is however an optional method which allows you to store your seedcodes across multiple encrypted cloud storage locations. This is helpful if you want to be able to update the backup in the future without having to retrieve all the USB drives first. It is just as secure as the offline method, and more convenient. It's up to you which method you choose.`,
+		},
+		{
+			question: 'Is this free?',
+			answer: `Yes, the actual system outlined here and in the PDF (if you choose to download it) is free of charge. Our mission is to help as many people in the crypto community as possible to secure their assets.`,
+		},
+		{
+			question: 'Is there a paid version?',
+			answer: `We do have a fully offline version of the system that will be available for purchase at a later date. It runs simply in the browser, and does not require any internet connection. It dramatically speeds up the backup and restore process, and is designed for those who have a large number of wallets to backup, or who just want a turnkey tool to do the job.`,
 		},
 	],
 ];
 ---
+
 <div id="faq-anchor"></div>
 <div class="px-4 py-16 mx-auto max-w-6xl lg:py-20">
 	<div class="max-w-xl sm:mx-auto lg:max-w-2xl">
 		<div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-			<h2 id="faqs" class="max-w-lg mb-4 text-3xl font-bold leading-none tracking-tight sm:text-4xl md:mx-auto font-heading">
+			<h2
+				id="faqs"
+				class="max-w-lg mb-4 text-3xl font-bold leading-none tracking-tight sm:text-4xl md:mx-auto font-heading"
+			>
 				Frequently Asked Questions
 			</h2>
 		</div>
