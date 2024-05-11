@@ -6,7 +6,7 @@ import { Picture } from '@astrojs/image/components';
 <section>
 	<Picture
 		src={import('~/assets/images/hero-image-4.png')}
-		class="mx-auto relative md:top-3 top-1"
+		class="mx-auto relative lg:top-6 md:top-4 top-2"
 		widths={[400, 768, 1000]}
 		sizes="(max-width: 400px) 400px, (max-width: 768px) 768px, 1000px"
 		alt="Hero Image"
@@ -14,10 +14,10 @@ import { Picture } from '@astrojs/image/components';
 		loading="eager"
 		width={1200}
 		height={563}
-		style="max-width:94%"
+		style="max-width:98%"
 	/>
 	<div class="max-w-6xl mx-auto px-0 sm:px-6">
-		<div class="py-3 md:pt-5 pt-3">
+		<div class="py-3 lg:pt-12 md:pt-5 pt-3">
 			<div class="text-left pb-0 md:pb-0 max-w-5xl mx-auto">
 				<h1
 					class="text-center text-3xl md:text-4xl lg:text-5xl sm:text-4xl font-bold leading-tighter tracking-tighter mb-5 font-heading relative top-0 text-gray-800"
