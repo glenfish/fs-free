@@ -7,7 +7,7 @@ const items = [
 			title: '1. Get seedword list',
 			description:
 				"There's 2048 possible words in the entire BIP39 word list. Your wallet seedphrase backup is usually 12 or 24 words in length and these words come from this list. You can download them ",
-			icon: 'tabler:list-check',
+			icon: 'tabler:check',
 			link: 'https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt',
 			linktitle: '→ here',
 		},
@@ -15,30 +15,30 @@ const items = [
 			title: '2. Arrange alphabetically',
 			description:
 				'Open these 2048 words in a spreadsheet (one per row) ordered from A to Z and assign them numbers from 1 to 2048',
-			icon: 'tabler:list-check',
+			icon: 'tabler:check',
 		},
 		{
 			title: '3. Randomize numbers',
 			description: 'Create a random number mapping to the list of 2048 numbers. This is your `seed map`.',
-			icon: 'tabler:list-check',
+			icon: 'tabler:check',
 		},
 		{
 			title: '4. Map your seeds',
 			description:
-				'For each of your crypto wallets, go through each seed word (one word at a time) and write down the matching number. When you are done you will have 12 or 24 numbers instead of seed words. These are your `seed codes`',
-			icon: 'tabler:list-check',
+				'For each of your crypto web wallets, software wallets and hardware wallets, go through each seed word (one word at a time) and write down the matching number from your seed map. When you are done you will have 12, 18, 24 or 25 numbers that match up with your seed words. These are your `seed codes`',
+			icon: 'tabler:check',
 		},
 	],
 	[
 		{
 			title: '5. Store numbers on USB',
 			description: 'Create a text file of your wallet `seed codes` and save it to a USB drive',
-			icon: 'tabler:list-check',
+			icon: 'tabler:check',
 		},
 		{
 			title: '6. Encrypt seed map',
 			description: 'Create a password-protected PDF of your seed map and save it to a second USB drive',
-			icon: 'tabler:list-check',
+			icon: 'tabler:check',
 			link: 'https://pdfoffline.com',
 			linktitle: ' → Offline PDF Maker',
 		},
@@ -46,18 +46,19 @@ const items = [
 			title: '7. Save master password',
 			description:
 				'Store your password in multiple safe locations. Do not store it on or near the USBs. This is how you will unlock your seed map when you restore your wallets',
-			icon: 'tabler:list-check',
+			icon: 'tabler:check',
 		},
 		{
 			title: '8. Copy USBs',
 			description:
 				'Duplicate the 2 USB drives and store them in separate physical locations. (eg. home, work, relative) You can update them as you add or change wallets',
-			icon: 'tabler:list-check',
+			icon: 'tabler:check',
 		},
 		{
 			title: '9. Set up your Deadman Switch',
 			description:
 				'A special bonus, if you download the PDF you will learn how to set up a `Deadman Switch` to ensure your loved ones can access your crypto if you are incapacitated or have passed on.',
+			icon: 'tabler:currency-bitcoin',
 		},
 	],
 ];
