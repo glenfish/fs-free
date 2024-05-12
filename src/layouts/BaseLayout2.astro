@@ -9,19 +9,10 @@ import HeaderScripts2 from '~/components/core/HeaderScripts2.astro';
 const { meta = {} } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="motion-safe:scroll-smooth 2xl:text-[20px]">
 	<head>
-		
-		<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CDEPZRQ94L"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CDEPZRQ94L');
-</script>
+		<meta charset="utf-8" />
 
 		<MetaTags {...meta} />
 		<HeaderScripts />
@@ -29,10 +20,6 @@ const { meta = {} } = Astro.props;
 	</head>
 
 	<body class="antialiased text-gray-900 dark:text-slate-500 tracking-tight bg-white dark:bg-slate-900">
-				<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMPS25L"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
 		<slot />
 		<BasicScripts />
 		<style is:global>
