@@ -77,15 +77,15 @@ const items = [
 				Steps to secure your future wealth
 			</p>
 		</div>
-		<div class="grid mx-auto space-y-6 md:grid-cols-2 md:space-y-0">
+		<div class="grid mx-auto space-y-6 md:grid-cols-2 md:space-y-0 pt-5">
 			{
 				items.map((subitems) => (
-					<div class="space-y-8 sm:px-8 mx-auto">
+					<div class="space-y-8 sm:px-8 mx-auto  ">
 						{subitems.map(({ title, description, icon, link, linktitle }) => (
-							<div class="flex flex-row max-w-md">
+							<div class="flex flex-row max-w-md bg-gray-100 p-5 rounded-lg bg-gradient-to-b from-gray-300">
 								<div class="mb-4 mr-2">
-									<div class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500 dark:bg-orange-500">
-										{icon && <Icon name={icon} class="w-6 h-6 text-white icon-light" />}
+									<div class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500 dark:bg-orange-500 border-2 border-solid border-white">
+										{icon && <Icon name={icon} class="w-6 h-6 text-white icon-light " />}
 									</div>
 								</div>
 								<div>
